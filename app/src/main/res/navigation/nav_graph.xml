@@ -25,4 +25,12 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/baseFragment"
+        android:name="com.james.curly.presentation.base.BaseFragment"
+        android:label="BaseFragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.james.curly.presentation.cart.CartFragment"
+        android:label="CartFragment" />
 </navigation>

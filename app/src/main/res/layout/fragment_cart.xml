@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.james.curly.presentation.cart.CartViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.cart.CartFragment">
+
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/materialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="7dp"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="장바구니"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <include
+            android:id="@+id/include_user_address"
+            layout="@layout/include_user_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+
+        <include
+            app:layout_constraintTop_toBottomOf="@+id/include_user_address"
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            layout="@layout/include_line_8dp"
+            android:layout_height="8dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/line" />
+
+        <include
+            app:layout_constraintTop_toBottomOf="@+id/rv_cart"
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            layout="@layout/include_line_8dp"
+            android:layout_height="8dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
