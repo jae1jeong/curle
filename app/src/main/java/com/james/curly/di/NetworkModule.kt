@@ -16,6 +16,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    const val BASE_URL = ""
 
     @Singleton
     @Provides
@@ -24,7 +25,7 @@ object NetworkModule {
     ): Retrofit {
 
         val logging = HttpLoggingInterceptor()
-        logging.level = if(BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+        logging.level = HttpLoggingInterceptor.Level.BODY
 
         val client = OkHttpClient.Builder()
             .addInterceptor(logging)
@@ -39,7 +40,7 @@ object NetworkModule {
 
         return Retrofit.Builder()
             .client(client)
-            .baseUrl(BuildConfig.SERVER_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

@@ -12,11 +12,14 @@ import com.james.curly.databinding.FragmentCartBinding
 import com.james.curly.presentation.base.BaseFragment
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class CartFragment : BaseFragment<FragmentCartBinding,CartViewModel>(R.layout.fragment_cart) {
 
     private val viewModel: CartViewModel by viewModels()
+
+    private val cartAdapter:CartItemAdapter by lazy { CartItemAdapter(viewModel) }
 
 
     override fun onViewCreated(view:View, savedInstanceState: Bundle?) {
@@ -25,15 +28,23 @@ class CartFragment : BaseFragment<FragmentCartBinding,CartViewModel>(R.layout.fr
     }
 
     override fun initVIew() {
-        TODO("Not yet implemented")
+        binding.rvCart.apply {
+            adapter = cartAdapter
+        }
+
+
+
     }
 
     override fun setEvent() {
-        TODO("Not yet implemented")
+
     }
 
     override fun observeData() {
-        TODO("Not yet implemented")
+        viewModel.carts.observe(viewLifecycleOwner){
+            cartAdapter.submitList(it)
+        }
+
     }
 
 

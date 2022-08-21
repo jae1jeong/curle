@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="productPrice"
@@ -18,9 +20,109 @@
             type="int" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
+    android:padding="16dp"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_product_price_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상품금액"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_product_price"
+        tools:text="999,999원"
+        android:text="@{@string/krw_format(@string/currency_format(productPrice))}"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_product_price_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_product_price_info" />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/tv_discount_price_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상품할인금액"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_product_price_info" />
+
+    <TextView
+        android:id="@+id/tv_discount_price"
+        tools:text="999,999원"
+        android:text="@{@string/krw_format(@string/currency_format(productDiscount))}"
+
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_discount_price_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_discount_price_info" />
+
+    <TextView
+        android:id="@+id/tv_delivery_price_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="배송비"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_discount_price_info" />
+
+    <TextView
+        android:id="@+id/tv_delivery_price"
+        tools:text="999,999원"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{@string/krw_format(@string/currency_format(deliveryPrice))}"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_delivery_price_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_delivery_price_info" />
+
+
+    <TextView
+        android:layout_marginTop="33dp"
+        android:id="@+id/tv_pay_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="결제예정금액"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_delivery_price_info" />
+
+    <TextView
+        android:id="@+id/tv_pay_price"
+        tools:text="999,999원"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{@string/krw_format(@string/currency_format(payAmount))}"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_pay_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_pay_info" />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="쿠폰/적립금은 주문서에서 사용 가능합니다"
+        android:textColor="#999999"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_pay_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pay_price" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

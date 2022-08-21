@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="sellerName"
+            type="String" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:paddingHorizontal="16dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_delivery_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="배송"
+        android:textColor="#999999"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:text="샛별배송"
+        android:textColor="#111111"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_delivery_info"
+        app:layout_constraintStart_toEndOf="@+id/tv_delivery_info"
+        app:layout_constraintTop_toTopOf="@+id/tv_delivery_info" />
+
+
+    <TextView
+        android:id="@+id/tv_seller_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="판매자"
+        android:layout_marginTop="16dp"
+        android:textColor="#999999"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_seller_info_sub" />
+
+    <TextView
+        android:id="@+id/tv_seller_info_sub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="23시 전 주문시 내일 아침 7시 전 도착
+(대구 부산 울산 샛별배송 운영시간 별도 확인)"
+        android:textColor="#999999"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/tv_seller_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="컬리"
+        android:text="@{sellerName}"
+        android:textColor="#111111"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_seller_info"
+        app:layout_constraintTop_toTopOf="@+id/tv_seller_info"
+        tools:layout_editor_absoluteX="96dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

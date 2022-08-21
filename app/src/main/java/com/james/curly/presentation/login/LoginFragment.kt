@@ -11,7 +11,9 @@ import com.james.curly.R
 import com.james.curly.databinding.FragmentLoginBinding
 import com.james.curly.presentation.base.BaseFragment
 import com.james.curly.presentation.base.BaseViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : BaseFragment<FragmentLoginBinding,LoginViewModel>(R.layout.fragment_login) {
 
     private val viewModel:LoginViewModel by viewModels()

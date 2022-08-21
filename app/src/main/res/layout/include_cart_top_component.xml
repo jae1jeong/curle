@@ -6,6 +6,14 @@
         <variable
             name="userAddress"
             type="String" />
+
+        <variable
+            name="checkedCnt"
+            type="int" />
+        <variable
+            name="totalCnt"
+            type="int" />
+
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:paddingHorizontal="16dp"
@@ -44,7 +52,7 @@
     <CheckBox
         android:id="@+id/cb"
         android:layout_width="wrap_content"
-        android:text="전체선택(0/3)"
+        android:text="@{@string/cart_size_total(checkedCnt,totalCnt)}"
         android:textSize="14sp"
 
         android:layout_height="wrap_content"

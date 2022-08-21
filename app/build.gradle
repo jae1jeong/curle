@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 
 }
 
@@ -98,13 +99,17 @@ dependencies {
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$roomVersion")
 
-    def fragment_version = "1.4.0-alpha02"
+    def fragment_version = "1.4.0-alpha03"
     // ...
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
-    implementation 'androidx.activity:activity:1.6.0-beta01'
-    implementation 'androidx.fragment:fragment:1.6.0-alpha01'
+    implementation "androidx.fragment:fragment:$fragment_version"
 
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
+
+    // The following line adds a dependency on the dynamodb client.
+    implementation("aws.sdk.kotlin:dynamodb:0.+")
 
 
 }

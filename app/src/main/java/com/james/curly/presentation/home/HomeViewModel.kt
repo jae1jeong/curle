@@ -1,6 +1,9 @@
 package com.james.curly.presentation.home
 
 import com.james.curly.presentation.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HomeViewModel:BaseViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor():BaseViewModel() {
 }

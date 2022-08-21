@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상품정보" />
+
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/tv_pack_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="포장타입"
+        android:textColor="#999999"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/tv_pack_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="샛별배송"
+        android:textColor="#111111"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_pack_info"
+        app:layout_constraintStart_toEndOf="@+id/tv_pack_info"
+        app:layout_constraintTop_toTopOf="@+id/tv_pack_info" />
+
+
+    <TextView
+        android:id="@+id/tv_seller_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="판매단위"
+        android:layout_marginTop="16dp"
+        android:textColor="#999999"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_seller_info_sub" />
+
+    <TextView
+        android:id="@+id/tv_seller_info_sub"
+        android:layout_width="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_height="wrap_content"
+        android:text="23시 전 주문시 내일 아침 7시 전 도착
+(대구 부산 울산 샛별배송 운영시간 별도 확인)"
+        android:layout_marginTop="4dp"
+        android:textColor="#999999"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_pack_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pack_type" />
+
+    <TextView
+        android:id="@+id/tv_product_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{sellerName}"
+        android:textColor="#111111"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_seller_info"
+        app:layout_constraintStart_toStartOf="@+id/tv_pack_type"
+        app:layout_constraintTop_toTopOf="@+id/tv_seller_info"
+        tools:text="컬리" />
+
+    <TextView
+        android:id="@+id/tv_product_count_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="중량/용량"
+        android:textColor="#999999"
+        app:layout_constraintStart_toStartOf="@+id/tv_seller_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_seller_info" />
+
+    <TextView
+        android:id="@+id/tv_product_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{sellerName}"
+        android:textColor="#111111"
+        app:layout_constraintStart_toStartOf="@+id/tv_product_unit"
+        app:layout_constraintTop_toTopOf="@+id/tv_product_count_info"
+        tools:text="10구" />
+
+
+    <TextView
+        android:id="@+id/tv_allergy_info"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알레르기정보"
+        android:textColor="#999999"
+        app:layout_constraintStart_toStartOf="@+id/tv_seller_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_product_count_info" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계란 함유"
+        android:textColor="#111111"
+        app:layout_constraintStart_toStartOf="@+id/tv_product_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_allergy_info" />
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:id="@+id/tv_notice_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안내사항"
+        android:textColor="#999999"
+        app:layout_constraintStart_toStartOf="@+id/tv_allergy_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_allergy_info" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안내사항"
+        android:textColor="#111111"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_notice_info"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="@+id/tv_notice_info" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
