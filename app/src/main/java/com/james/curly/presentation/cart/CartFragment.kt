@@ -2,6 +2,7 @@ package com.james.curly.presentation.cart
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,7 @@ class CartFragment : BaseFragment<FragmentCartBinding,CartViewModel>(R.layout.fr
     override fun observeData() {
         viewModel.carts.observe(viewLifecycleOwner){
             cartAdapter.submitList(it)
+            Log.d("TAG", "observeData: $it")
         }
 
     }

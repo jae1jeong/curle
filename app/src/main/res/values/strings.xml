@@ -11,6 +11,5 @@
     <string name="currency_format">#,##0</string>
     <string name="krw_format">%s원</string>
     <string name="pay_format">%s 결제하기</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

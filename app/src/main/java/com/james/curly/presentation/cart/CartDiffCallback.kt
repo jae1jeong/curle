@@ -9,7 +9,7 @@ object CartDiffCallback:DiffUtil.ItemCallback<CartItem>() {
     }
 
     override fun areContentsTheSame(oldItem: CartItem, newItem: CartItem): Boolean {
-        return oldItem == newItem
+        return oldItem.title == newItem.title && oldItem.id == newItem.id && oldItem.image == newItem.image && oldItem.amount == newItem.amount
     }
 
 }

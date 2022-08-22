@@ -17,15 +17,15 @@ class ProductDescFragment : BaseFragment<FragmentProductDescBinding,ProductDescV
         binding.viewModel = viewModel
     }
     override fun initVIew() {
-        TODO("Not yet implemented")
+
     }
 
     override fun setEvent() {
-        TODO("Not yet implemented")
+
     }
 
     override fun observeData() {
-        TODO("Not yet implemented")
+
     }
 
 

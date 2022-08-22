@@ -1,5 +1,6 @@
 package com.james.curly.presentation.cart
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -41,6 +42,7 @@ class CartItemAdapter @Inject constructor(private val viewModel:CartViewModel):L
 
         holder.binding.btnDelete.setOnClickListener {
             viewModel.deleteItem(position)
+            notifyItemRemoved(position)
         }
     }
 }
