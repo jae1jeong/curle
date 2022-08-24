@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface SearchService {
-    @GET("search")
+    @GET("/demo")
     suspend fun getSearchItems(@Query("q") word:String): GetSearchItemResponse
 
     @GET("suggest")
