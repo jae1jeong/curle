@@ -2,11 +2,14 @@
 <resources>
 
     <string-array name="id_array">
-        <item>g2Wy0,30,F</item>
-        <item>58cw8,40,M</item>
-        <item>IddpB,20,F</item>
-        <item>GSYmU,10,F</item>
-        <item>9ZfPq,20,M</item>
-        <item>gZ1ER,50,M</item>
+        <item>Aux11,50,M</item>
+        <item>60auc,30,F</item>
+        <item>9eIIl,40,F</item>
+        <item>A8SlD,10,F</item>
+        <item>83AZL,50,F</item>
+        <item>nA5M3,30,M</item>
+        <item>D4JbI,20,M</item>
+        <item>GnZAA,10,F</item>
+        <item>JCs0X,40,M</item>
     </string-array>
 </resources>
