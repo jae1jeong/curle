@@ -10,11 +10,14 @@ import com.bumptech.glide.request.RequestOptions
 object ImageBindingAdapter {
 
     @BindingAdapter("app:imageUrl")
-    @JvmStatic fun loadImage(imageView: ImageView, url: String) {
-        Glide.with(imageView.context)
-            .load(url)
-            .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .apply(RequestOptions().centerCrop())
-            .into(imageView)
+    @JvmStatic fun loadImage(imageView: ImageView, url: String?) {
+        url?.let {
+            Glide.with(imageView.context)
+                .load(url)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .apply(RequestOptions().centerCrop())
+                .into(imageView)
+        }
+
     }
 }

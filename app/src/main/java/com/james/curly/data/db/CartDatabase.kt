@@ -8,7 +8,7 @@ import com.james.curly.data.dao.CartDao
 import com.james.curly.data.entity.CartEntity
 
 
-@Database(entities = [CartEntity::class], version = 1)
+@Database(entities = [CartEntity::class], version = 2)
 abstract class CartDatabase:RoomDatabase() {
 
     abstract fun cartDao():CartDao

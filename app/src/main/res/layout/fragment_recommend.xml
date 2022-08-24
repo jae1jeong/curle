@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.james.curly.presentation.recommend.RecommendViewModel" />
@@ -14,27 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true">
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:context=".presentation.recommend.RecommendFragment">
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/vp2_event"
-                android:layout_width="match_parent"
-                android:layout_height="326dp"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <include
                 android:id="@+id/include_recommend"
                 layout="@layout/include_recommend_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:btnVisible="@{false}"
-                app:layout_constraintTop_toBottomOf="@+id/vp2_event"
-                app:title="이 상품 어때요?" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewTitle='@{"이 상품 어때요?"}' />
 
             <ImageView
                 android:id="@+id/iv_event"
@@ -45,16 +35,14 @@
                 android:src="@drawable/event_dummy"
                 app:layout_constraintTop_toBottomOf="@+id/include_recommend" />
 
-
             <include
                 android:id="@+id/include_recommend_beauty"
                 layout="@layout/include_recommend_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                app:btnVisible="@{true}"
                 app:layout_constraintTop_toBottomOf="@+id/iv_event"
-                app:title="써보면 좋을 뷰티 상품" />
+                app:viewTitle='@{"써보면 좋을 뷰티 상품"}'/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>

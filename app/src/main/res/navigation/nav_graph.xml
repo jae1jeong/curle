@@ -3,33 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/home_fragment">
+    app:startDestination="@id/initNavigateFragment">
 
     <fragment
-        android:id="@+id/home_fragment"
+        android:id="@+id/homeFragment"
         android:name="com.james.curly.presentation.home.HomeFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/second_fragment" />
-        <action
-            android:id="@+id/action_FirstFragment_to_productDescFragment"
-            app:destination="@id/productDescFragment" />
-        <action
             android:id="@+id/action_home_fragment_to_cartFragment"
             app:destination="@id/cartFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/second_fragment"
-        android:name="com.james.curly.presentation.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        <argument
+            android:name="userId"
+            app:argType="string" />
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/home_fragment" />
+            android:id="@+id/action_homeFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
@@ -38,9 +28,60 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.james.curly.presentation.login.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_home_fragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
     <fragment
-        android:id="@+id/productDescFragment"
-        android:name="com.james.curly.presentation.product_desc.ProductDescFragment"
-        android:label="ProductDescFragment" />
+        android:id="@+id/categoryFragment"
+        android:name="com.james.curly.presentation.category.CategoryFragment"
+        android:label="CategoryFragment" />
+    <fragment
+        android:id="@+id/myPageFragment"
+        android:name="com.james.curly.presentation.my_page.MyPageFragment"
+        android:label="MyPageFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.james.curly.presentation.search.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchDetailFragment"
+            app:destination="@id/searchDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.james.curly.presentation.product_detail.ProductDetailFragment"
+        android:label="ProductDetailFragment" >
+
+        <argument
+            android:name="product"
+            app:argType="com.james.curly.data.model.Product" />
+    </fragment>
+    <fragment
+        android:id="@+id/initNavigateFragment"
+        android:name="com.james.curly.presentation.init_navigate.InitNavigateFragment"
+        android:label="fragment_init_navigate"
+        tools:layout="@layout/fragment_init_navigate" >
+        <action
+            android:id="@+id/action_initNavigateFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_initNavigateFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchDetailFragment"
+        android:name="com.james.curly.presentation.search_detail.SearchDetailFragment"
+        android:label="SearchDetailFragment" >
+        <argument
+            android:name="keyword"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_searchDetailFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+
 </navigation>

@@ -1,6 +1,5 @@
 package com.james.curly.presentation.cart
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -25,23 +24,9 @@ class CartItemAdapter @Inject constructor(private val viewModel:CartViewModel):L
         val item = getItem(position)
         holder.binding.cart = item
 
-        holder.binding.checkBox.setOnClickListener {
-            item.checked = holder.binding.checkBox.isChecked
-            notifyItemChanged(position)
-        }
-
-        holder.binding.btnPlus.setOnClickListener {
-            viewModel.plus(position)
-            notifyItemChanged(position)
-        }
-
-        holder.binding.btnMinus.setOnClickListener {
-            viewModel.minus(position)
-            notifyItemChanged(position)
-        }
 
         holder.binding.btnDelete.setOnClickListener {
-            viewModel.deleteItem(position)
+            viewModel.deleteItem(item)
             notifyItemRemoved(position)
         }
     }

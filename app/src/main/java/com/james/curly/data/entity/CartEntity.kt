@@ -6,21 +6,19 @@ import com.james.curly.data.model.CartItem
 
 
 @Entity
-data class CartEntity (
+data class CartEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Long,
+    val id: Long? = null,
     val title: String,
     val image: String?,
-    var checked: Boolean = false,
-    val amount: Int = 0,
-    var count: Int = 1
-    )
+    val amount: Int = 0
+)
 
 
 fun CartEntity.toCartItem() = CartItem(
-    id, title, image, checked, amount, count
+    title = title, image = image, amount = amount
 )
 
 fun CartItem.toCartEntity() = CartEntity(
-    id, title, image, checked, amount, count
+    id, title, image, amount
 )

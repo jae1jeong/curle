@@ -9,7 +9,7 @@ import javax.inject.Inject
 class CartRepositoryImpl @Inject constructor(
     private val cartDao: CartDao
 ):CartRepository {
-    override suspend fun addCard(cartEntity: CartEntity) {
+    override suspend fun addCart(cartEntity: CartEntity) {
         return cartDao.addCart(cartEntity)
     }
 

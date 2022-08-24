@@ -4,8 +4,12 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
-
+    id 'kotlin-parcelize'
 }
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 
 android {
     compileSdk 32
@@ -16,14 +20,19 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "PERSONALIZE", properties['personalize']
+        buildConfigField "String", "BEAUTY", properties['beauty']
+        buildConfigField "String", "BASE_URL", properties['base_url']
+        buildConfigField "String", "SEARCH_URL", properties['search_url']
+        buildConfigField "String", "API_KEY", properties['api_key']
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
         }
     }
     compileOptions {
@@ -41,7 +50,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.5.0-alpha04'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -89,7 +98,7 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
 
-    def roomVersion = "2.3.0"
+    def roomVersion = "2.4.0-alpha03"
 
     implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
@@ -108,8 +117,7 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
 
-    // The following line adds a dependency on the dynamodb client.
-    implementation("aws.sdk.kotlin:dynamodb:0.+")
+
 
 
 }

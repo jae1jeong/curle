@@ -12,4 +12,5 @@
     <string name="krw_format">%s원</string>
     <string name="pay_format">%s 결제하기</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unit_format">총 %d개</string>
 </resources>

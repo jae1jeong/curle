@@ -37,7 +37,7 @@
     <TextView
         android:id="@+id/tv_product_price"
         tools:text="999,999원"
-        android:text="@{@string/krw_format(@string/currency_format(productPrice))}"
+        app:currencyFormat="@{productPrice}"
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,8 +58,7 @@
     <TextView
         android:id="@+id/tv_discount_price"
         tools:text="999,999원"
-        android:text="@{@string/krw_format(@string/currency_format(productDiscount))}"
-
+        app:currencyFormat="@{0}"
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,7 +82,7 @@
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@{@string/krw_format(@string/currency_format(deliveryPrice))}"
+        app:currencyFormat="@{0}"
 
         app:layout_constraintBottom_toBottomOf="@+id/tv_delivery_price_info"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +106,7 @@
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@{@string/krw_format(@string/currency_format(payAmount))}"
+        app:currencyFormat="@{payAmount}"
         app:layout_constraintBottom_toBottomOf="@+id/tv_pay_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_pay_info" />

@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.james.curly.R
+import com.james.curly.data.entity.toCartItem
 import com.james.curly.databinding.FragmentCartBinding
 import com.james.curly.presentation.base.BaseFragment
 import dagger.hilt.EntryPoint
@@ -32,22 +34,18 @@ class CartFragment : BaseFragment<FragmentCartBinding,CartViewModel>(R.layout.fr
         binding.rvCart.apply {
             adapter = cartAdapter
         }
-
-
-
     }
 
     override fun setEvent() {
-
+        binding.btnClose.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     override fun observeData() {
         viewModel.carts.observe(viewLifecycleOwner){
-            cartAdapter.submitList(it)
-            Log.d("TAG", "observeData: $it")
+            cartAdapter.submitList(it.map { item -> item.toCartItem() })
         }
-
     }
-
 
 }

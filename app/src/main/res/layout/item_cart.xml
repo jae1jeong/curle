@@ -14,32 +14,27 @@
     android:layout_height="wrap_content">
 
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_marginStart="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
         android:text="@{cart.title}"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
-        app:layout_constraintTop_toTopOf="@+id/checkBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="상품명" />
 
-    <ImageView
+    <TextView
         android:id="@+id/imageView4"
         android:layout_width="60dp"
-        app:imageUrl="@{cart.image}"
-        android:adjustViewBounds="true"
+        android:text="@{cart.title}"
+        android:textColor="@color/white"
         android:layout_height="78dp"
         android:layout_marginTop="10dp"
-        android:background="@color/main_color"
+        android:background="#999999"
+        tools:text="상품명상품명"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -51,51 +46,9 @@
         app:currencyFormat="@{cart.amount}"
         android:textColor="#111111"
         android:textSize="16sp"
-        android:layout_marginTop="6dp"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageView4"
         tools:text="999,999원" />
-
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/btn_minus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
-        android:padding="10dp"
-        android:tint="#202429"
-        android:src="@drawable/ic_minus"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/tv_amount"
-        app:strokeColor="#E4E6E9"
-        app:strokeWidth="1dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_cnt"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="false"
-        tools:text="99"
-        android:textColor="#202429"
-        android:text="@{String.valueOf(cart.count)}"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/btn_minus"
-        app:layout_constraintTop_toTopOf="@+id/btn_minus"
-        app:strokeColor="#E4E6E9"
-        app:strokeWidth="1dp" />
-
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/btn_plus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
-        android:padding="10dp"
-        android:tint="#202429"
-        android:src="@drawable/ic_plus"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/btn_cnt"
-        app:strokeColor="#E4E6E9"
-        app:strokeWidth="1dp" />
 
 
     <androidx.appcompat.widget.AppCompatImageButton

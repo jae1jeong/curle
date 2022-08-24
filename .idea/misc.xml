@@ -4,17 +4,26 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/bg_bottom_sheet_radius.xml" value="0.2795" />
+        <entry key="app/src/main/res/drawable/bg_et_search.xml" value="0.291" />
+        <entry key="app/src/main/res/drawable/bg_splash.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/btn_cart.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/et_login.xml" value="0.2795" />
+        <entry key="app/src/main/res/drawable/ic_outline_shopping_cart_24.xml" value="0.2025" />
         <entry key="app/src/main/res/drawable/ic_share.xml" value="0.2795" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.25195429945880937" />
+        <entry key="app/src/main/res/layout/fragment_category.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.33177083333333335" />
+        <entry key="app/src/main/res/layout/fragment_my_page.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_product_desc.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/fragment_product_detail.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/fragment_recommend.xml" value="0.33177083333333335" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_search_detail.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/layout/include_address_component.xml" value="0.3307291666666667" />
         <entry key="app/src/main/res/layout/include_amount.xml" value="0.3307291666666667" />
@@ -28,6 +37,7 @@
         <entry key="app/src/main/res/layout/item_cart.xml" value="0.3307291666666667" />
         <entry key="app/src/main/res/layout/item_event.xml" value="0.3307291666666667" />
         <entry key="app/src/main/res/layout/item_product.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_product_search.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_recipe.xml" value="0.3307291666666667" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.33177083333333335" />
       </map>
